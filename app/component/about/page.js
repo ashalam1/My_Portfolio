@@ -8,9 +8,9 @@ const About = () => {
                 {/* About Me Section */}
                 <div className="text-center mb-16">
                     <h1 className="text-4xl font-bold text-white">About Me</h1>
-                    <p className="text-lg text-gray-300 mt-2">
-                        Let’s connect. Whether it's a query or collaboration, we're just a message away!
-                    </p>
+                    {/* <p className="text-lg text-gray-300 mt-2">
+                        Let&apos;s connect. Whether it&apos;s a query or collaboration, we&apos;re just a message away!
+                    </p> */}
                 </div>
 
                 {/* Content Section */}
@@ -18,7 +18,7 @@ const About = () => {
                     {/* Left Section */}
                     <div className="w-full sm:w-3/5">
                         <p className="text-white text-lg">
-                            I’m a full-stack developer specializing in React.js, Next.js, Material-UI, Python, and FastAPI. I build dynamic UIs and scalable backend services while efficiently managing databases with SQLAlchemy and SQLite. I'm passionate about delivering intuitive user experiences and optimizing performance.
+                            I&apos;m a full-stack developer specializing in React.js, Next.js, Material-UI, Python, and FastAPI. I build dynamic UIs and scalable backend services while efficiently managing databases with SQLAlchemy and SQLite. I&apos;m passionate about delivering intuitive user experiences and optimizing performance.
                         </p>
                     </div>
 

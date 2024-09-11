@@ -52,7 +52,7 @@ const Contact = () => {
             <div className="absolute top-8 left-8">
                 <h1 className="text-4xl font-bold text-white">Contact Me</h1>
                 <p className="text-lg text-gray-300 mt-2">
-                    Let’s connect. Whether it's a query or collaboration, I'm just a message away!
+                    Let&apos;s connect. Whether it&apos;s a query or collaboration, we&apos;re just a message away!
                 </p>
             </div>
 

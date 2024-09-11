@@ -24,9 +24,9 @@ export default function Home() {
           {/* Left Side - Text */}
           <div className="text-center sm:text-left flex flex-col items-center justify-center sm:justify-end p-8 ">
             <h1 className="text-4xl sm:text-5xl font-bold text-white">
-              Hey there! I'm <span style={{ color: '#0a45a3' }}>Ashfaque</span>
+              Hey there! I&apos;m <span style={{ color: '#0a45a3' }}>Ashfaque</span>
             </h1>
-            <p className="text-2xl sm:text-3xl mt-2 text-white">I'm a web developer</p>
+            <p className="text-2xl sm:text-3xl mt-2 text-white">I&apos;m a web developer</p>
             <button className="relative overflow-hidden bg-gradient-to-b from-[#0a45a3] to-black text-white px-4 py-2 rounded group w-48 mt-3">
               <span className="relative z-10">Download CV</span>
               <span className="absolute inset-0 bg-gradient-to-b from-[#123061] to-black -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></span>
