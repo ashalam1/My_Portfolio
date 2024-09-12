@@ -1,6 +1,7 @@
 "use client"
 import { useState } from 'react';
-
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 const Contact = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -8,7 +9,10 @@ const Contact = () => {
         subject: '',
         message: ''
     });
-    const [status, setStatus] = useState('');
+    const [snackbarOpen, setSnackbarOpen] = useState(false);
+    const [snackbarMessage, setSnackbarMessage] = useState('');
+    const [snackbarSeverity, setSnackbarSeverity] = useState('success');
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -21,7 +25,9 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!formData.name || !formData.email || !formData.subject || !formData.message) {
-            setStatus('Please fill in all fields');
+            setSnackbarMessage('Please fill in all fields');
+            setSnackbarSeverity('error');
+            setSnackbarOpen(true)
             return;
         }
 
@@ -37,16 +43,21 @@ const Contact = () => {
             const data = await res.json();
 
             if (data.success) {
-                setStatus('Email sent successfully');
+                setSnackbarMessage('Email sent successfully');
+                setSnackbarSeverity('success');
             } else {
-                setStatus('Failed to send email');
+                setSnackbarMessage('Failed to send email');
+                setSnackbarSeverity('error');
             }
         } catch (error) {
-            console.error(error);
-            setStatus('An error occurred');
+            setSnackbarMessage('An error occurred');
+            setSnackbarSeverity('error');
         }
+        setSnackbarOpen(true);
     };
-
+    const handleCloseSnackbar = () => {
+        setSnackbarOpen(false);
+    };
     return (
         <div className="relative flex flex-col items-center justify-center min-h-screen p-4 pt-32">
             <div className="absolute top-8 left-8">
@@ -166,6 +177,17 @@ const Contact = () => {
                     referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
             </div>
+            {/* Snackbar */}
+            <Snackbar
+                open={snackbarOpen}
+                autoHideDuration={6000}
+                onClose={handleCloseSnackbar}
+                anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+            >
+                <Alert onClose={handleCloseSnackbar} severity={snackbarSeverity} sx={{ width: '100%' }}>
+                    {snackbarMessage}
+                </Alert>
+            </Snackbar>
         </div>
     );
 };
