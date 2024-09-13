@@ -137,7 +137,6 @@ const Contact = () => {
                             Send
                         </button>
                     </form>
-                    {status && <p className="text-white mt-4">{status}</p>}
                 </div>
 
                 {/* Information Container */}
