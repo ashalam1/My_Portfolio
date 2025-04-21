@@ -81,8 +81,8 @@ export default function Contact() {
           </Badge>
           <h1 className="text-4xl font-bold text-white mb-4">Get In Touch</h1>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Let's connect! Whether you have a project in mind or just want to
-            say hello, I'm always open to discussing new opportunities and
+            Let&apos;s connect! Whether you have a project in mind or just want to
+            say hello, I&apos;m always open to discussing new opportunities and
             ideas.
           </p>
         </div>

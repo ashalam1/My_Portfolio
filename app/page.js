@@ -213,7 +213,7 @@ export default function Home() {
               Experience
             </Badge>
             <h2 className="text-4xl font-bold text-white mb-4">
-              Where I've Made an Impact
+              Where I&apos;ve Made an Impact
             </h2>
             <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               Professional experiences that have shaped my skills and expertise

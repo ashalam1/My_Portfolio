@@ -26,7 +26,7 @@ export default function About() {
           </Badge>
           <h1 className="text-4xl font-bold text-white mb-4">Know Me Better</h1>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            I'm a passionate full-stack developer with expertise in creating modern web applications that deliver
+            I&apos;m a passionate full-stack developer with expertise in creating modern web applications that deliver
             exceptional user experiences.
           </p>
         </div>
@@ -74,12 +74,12 @@ export default function About() {
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-white">Full-Stack Developer</h2>
                 <p className="text-gray-400">
-                  I'm a full-stack developer specializing in React.js, Next.js, Material-UI, Python, and FastAPI. I
+                  I&apos;m a full-stack developer specializing in React.js, Next.js, Material-UI, Python, and FastAPI. I
                   build dynamic UIs and scalable backend services while efficiently managing databases with SQLAlchemy
                   and SQLite.
                 </p>
                 <p className="text-gray-400">
-                  I'm passionate about delivering intuitive user experiences and optimizing performance. My approach
+                  I&apos;m passionate about delivering intuitive user experiences and optimizing performance. My approach
                   combines technical expertise with creative problem-solving to build applications that not only
                   function flawlessly but also provide exceptional user experiences.
                 </p>
