@@ -91,7 +91,7 @@ export default function About() {
     <div className="space-y-8">
       <div className="flex justify-center md:justify-start gap-8">
         <div className="bg-card border border-border rounded-lg p-6 flex flex-col items-center text-center w-36">
-          <h3 className="text-5xl font-bold text-[#0a45a3] mb-1">+</h3>
+          <h3 className="text-5xl font-bold text-[#0a45a3] mb-1">2+</h3>
           <p className="text-muted-foreground text-sm font-semibold">Years Experience</p>
         </div>
         <div className="bg-card border border-border rounded-lg p-6 flex flex-col items-center text-center w-36">
