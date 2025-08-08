@@ -70,17 +70,20 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-16 px-4 bg-gray-950">
+      <div className="min-h-screen pt-24 pb-16 px-4 bg-background relative overflow-hidden">
+      {/* Dark mode gradient background, matches your other sections */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-900 to-gray-950 -z-10 hidden dark:block"></div>
+        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#0a45a3_1px,transparent_1px)] [background-size:20px_20px] z-0"></div>
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12">
           <Badge
             variant="outline"
-            className="px-4 py-1 text-sm font-medium bg-blue-950/50 text-blue-400 border-blue-800 mb-4"
+            className="px-4 py-1 text-sm font-medium bg-blue-100 text-blue-800 border-blue-200 mb-4 dark:bg-blue-950/50 dark:text-blue-400 dark:border-blue-800"
           >
             Contact Me
           </Badge>
-          <h1 className="text-4xl font-bold text-white mb-4">Get In Touch</h1>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <h1 className="text-4xl font-bold text-foreground mb-4">Get In Touch</h1>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Let&apos;s connect! Whether you have a project in mind or just want to
             say hello, I&apos;m always open to discussing new opportunities and
             ideas.
@@ -95,8 +98,8 @@ export default function Contact() {
             variants={fadeIn}
             className="md:col-span-1 space-y-6"
           >
-            <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 hover:border-[#0a45a3]/30 transition-all duration-300">
-              <h2 className="text-2xl font-bold text-white mb-6">
+            <div className="bg-card borderborder-border rounded-xl p-6 hover:border-[#0a45a3]/30 transition-all duration-300">
+              <h2 className="text-2xl font-bold text-foreground mb-6">
                 Contact Information
               </h2>
 
@@ -106,8 +109,8 @@ export default function Contact() {
                     <MapPin className="h-5 w-5 text-[#0a45a3]" />
                   </div>
                   <div>
-                    <h3 className="text-white font-medium mb-1">Location</h3>
-                    <p className="text-gray-400">
+                    <h3 className="text-foreground font-medium mb-1">Location</h3>
+                    <p className="text-muted-foreground">
                       Indira Nagar, Lucknow, India
                     </p>
                   </div>
@@ -118,8 +121,8 @@ export default function Contact() {
                     <Phone className="h-5 w-5 text-[#0a45a3]" />
                   </div>
                   <div>
-                    <h3 className="text-white font-medium mb-1">Phone</h3>
-                    <p className="text-gray-400">+91 9125794356</p>
+                    <h3 className="text-foreground font-medium mb-1">Phone</h3>
+                    <p className="text-muted-foreground">+91 9125794356</p>
                     <p className="text-gray-500 text-sm">
                       Mon to Fri 9am to 6pm
                     </p>
@@ -131,8 +134,8 @@ export default function Contact() {
                     <Mail className="h-5 w-5 text-[#0a45a3]" />
                   </div>
                   <div>
-                    <h3 className="text-white font-medium mb-1">Email</h3>
-                    <p className="text-gray-400">ashfaquealam154@gmail.com</p>
+                    <h3 className="text-foreground font-medium mb-1">Email</h3>
+                    <p className="text-muted-foreground">ashfaquealam154@gmail.com</p>
                     <p className="text-gray-500 text-sm">
                       Send me your query anytime!
                     </p>
@@ -141,39 +144,39 @@ export default function Contact() {
               </div>
 
               <div className="mt-8">
-                <h3 className="text-white font-medium mb-4">Follow Me</h3>
+                <h3 className="text-foreground font-medium mb-4">Follow Me</h3>
                 <div className="flex gap-4">
                   <a
                     href="https://github.com/ashalam1"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#0a45a3]/80 transition-colors"
+                    className="w-10 h-10 rounded-full bg-card/80 flex items-center justify-center hover:bg-[#0a45a3]/80 transition-colors"
                   >
-                    <Github className="h-5 w-5 text-white" />
+                    <Github className="h-5 w-5 text-foreground" />
                   </a>
                   <a
                     href="https://linkedin.com/in/ashfaquealam154"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#0a45a3]/80 transition-colors"
+                    className="w-10 h-10 rounded-full bg-card/80 flex items-center justify-center hover:bg-[#0a45a3]/80 transition-colors"
                   >
-                    <Linkedin className="h-5 w-5 text-white" />
+                    <Linkedin className="h-5 w-5 text-foreground" />
                   </a>
                   <a
                     href="https://twitter.com/yourprofile"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#0a45a3]/80 transition-colors"
+                    className="w-10 h-10 rounded-full bg-card/80 flex items-center justify-center hover:bg-[#0a45a3]/80 transition-colors"
                   >
-                    <Twitter className="h-5 w-5 text-white" />
+                    <Twitter className="h-5 w-5 text-foreground" />
                   </a>
                   <a
                     href="https://instagram.com/ashfu_003"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#0a45a3]/80 transition-colors"
+                    className="w-10 h-10 rounded-full bg-card/80 flex items-center justify-center hover:bg-[#0a45a3]/80 transition-colors"
                   >
-                    <Instagram className="h-5 w-5 text-white" />
+                    <Instagram className="h-5 w-5 text-foreground" />
                   </a>
                 </div>
               </div>
@@ -187,15 +190,15 @@ export default function Contact() {
             variants={fadeIn}
             className="md:col-span-2"
           >
-            <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 md:p-8">
-              <h2 className="text-2xl font-bold text-white mb-6">
+            <div className="bg-card borderborder-border rounded-xl p-6 md:p-8">
+              <h2 className="text-2xl font-bold text-foreground mb-6">
                 Send Me a Message
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label htmlFor="name" className="text-white">
+                    <label htmlFor="name" className="text-foreground">
                       Your Name
                     </label>
                     <Input
@@ -204,12 +207,12 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="John Doe"
-                      className="bg-gray-800 border-gray-700 text-white"
+                      className="bg-card/80 border-gray-700 text-foreground"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-white">
+                    <label htmlFor="email" className="text-foreground">
                       Your Email
                     </label>
                     <Input
@@ -219,13 +222,13 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="john.doe@example.com"
-                      className="bg-gray-800 border-gray-700 text-white"
+                      className="bg-card/80 border-gray-700 text-foreground"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="subject" className="text-white">
+                  <label htmlFor="subject" className="text-foreground">
                     Subject
                   </label>
                   <Input
@@ -234,12 +237,12 @@ export default function Contact() {
                     value={formData.subject}
                     onChange={handleChange}
                     placeholder="How can I help you?"
-                    className="bg-gray-800 border-gray-700 text-white"
+                    className="bg-card/80 border-gray-700 text-foreground"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-white">
+                  <label htmlFor="message" className="text-foreground">
                     Your Message
                   </label>
                   <Textarea
@@ -248,19 +251,19 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Your message here..."
-                    className="bg-gray-800 border-gray-700 text-white min-h-[150px]"
+                    className="bg-card/80 border-gray-700 text-foreground min-h-[150px]"
                   />
                 </div>
 
                 <Button
                   type="submit"
-                  className="w-full bg-[#0a45a3] hover:bg-[#0a45a3]/80 text-white"
+                  className="w-full bg-[#0a45a3] hover:bg-[#0a45a3]/80 text-foreground"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
                     <span className="flex items-center">
                       <svg
-                        className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                        className="animate-spin -ml-1 mr-3 h-5 w-5 text-foreground"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -299,7 +302,7 @@ export default function Contact() {
           variants={fadeIn}
           className="mt-12"
         >
-          <div className="rounded-xl overflow-hidden border border-gray-800 h-[450px]">
+          <div className="rounded-xl overflow-hidden borderborder-border h-[450px]">
             <iframe
               className="w-full h-full"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31113.519926899844!2d77.6206220101186!3d12.895501624933344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae14bc1f875dd5%3A0x2b126387f21954a7!2sGarvebhavi%20Palya%2C%20Bengaluru%2C%20Karnataka%20560068!5e0!3m2!1sen!2sin!4v1700231426045!5m2!1sen!2sin"

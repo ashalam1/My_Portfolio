@@ -15,17 +15,20 @@ export default function About() {
   }
 
   return (
-    <div className="min-h-screen pt-24 pb-16 px-4 bg-gray-950">
+    <div className="min-h-screen pt-24 pb-16 px-4 bg-background relative overflow-hidden">
+  {/* Gradient background, only dark mode */}
+  <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-900 to-gray-950 -z-10 hidden dark:block"></div>
+
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12">
           <Badge
             variant="outline"
-            className="px-4 py-1 text-sm font-medium bg-blue-950/50 text-blue-400 border-blue-800 mb-4"
+            className="px-4 py-1 text-sm font-medium bg-blue-100 text-blue-800 border-blue-200 mb-4 dark:bg-blue-950/50 dark:text-blue-400 dark:border-blue-800"
           >
             About Me
           </Badge>
-          <h1 className="text-4xl font-bold text-white mb-4">Know Me Better</h1>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <h1 className="text-4xl font-bold text-foreground mb-4">Know Me Better</h1>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             I&apos;m a passionate full-stack developer with expertise in creating modern web applications that deliver
             exceptional user experiences.
           </p>
@@ -33,111 +36,106 @@ export default function About() {
 
         <Tabs defaultValue="about" value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="grid grid-cols-3 max-w-md mx-auto mb-12">
-            <TabsTrigger value="about" className="data-[state=active]:bg-[#0a45a3] data-[state=active]:text-white">
+            <TabsTrigger value="about" className="data-[state=active]:bg-[#0a45a3] data-[state=active]:text-foreground">
               About
             </TabsTrigger>
-            <TabsTrigger value="skills" className="data-[state=active]:bg-[#0a45a3] data-[state=active]:text-white">
+            <TabsTrigger value="skills" className="data-[state=active]:bg-[#0a45a3] data-[state=active]:text-foreground">
               Skills
             </TabsTrigger>
-            <TabsTrigger value="education" className="data-[state=active]:bg-[#0a45a3] data-[state=active]:text-white">
+            <TabsTrigger value="education" className="data-[state=active]:bg-[#0a45a3] data-[state=active]:text-foreground">
               Education
             </TabsTrigger>
           </TabsList>
 
           <TabsContent value="about" className="mt-6">
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={fadeIn}
-              className="grid md:grid-cols-2 gap-12 items-center"
-            >
-              <div className="space-y-6">
-                <div className="relative overflow-hidden rounded-lg">
-                  <div className="aspect-square bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center">
-                    <span className="text-9xl font-bold text-[#0a45a3]/20">A</span>
-                  </div>
-                  <div className="absolute inset-0 border border-[#0a45a3]/20 rounded-lg"></div>
-                </div>
+  <motion.div
+    initial="hidden"
+    animate="visible"
+    variants={fadeIn}
+    className="grid md:grid-cols-2 gap-16 items-center"
+  >
+    {/* Left side: Stats */}
 
-                <div className="grid grid-cols-2 gap-4 text-center">
-                  <div className="bg-gray-900 border border-gray-800 rounded-lg p-4">
-                    <h3 className="text-5xl font-bold text-[#0a45a3] mb-2">1+</h3>
-                    <p className="text-gray-400">Years Experience</p>
-                  </div>
-                  <div className="bg-gray-900 border border-gray-800 rounded-lg p-4">
-                    <h3 className="text-5xl font-bold text-[#0a45a3] mb-2">10+</h3>
-                    <p className="text-gray-400">Projects Completed</p>
-                  </div>
-                </div>
-              </div>
+    <div className="space-y-6">
+      <h2 className="text-2xl font-bold text-foreground">Full-Stack Developer</h2>
+      <p className="text-muted-foreground leading-relaxed">
+        I&apos;m a full-stack developer specializing in React.js, Next.js, Material-UI, Python, and FastAPI. I build dynamic UIs and scalable backend services while efficiently managing databases with SQLAlchemy and SQLite.
+      </p>
+      <p className="text-muted-foreground leading-relaxed">
+        I&apos;m passionate about delivering intuitive user experiences and optimizing performance. My approach combines technical expertise with creative problem-solving to build applications that not only function flawlessly but also provide exceptional user experiences.
+      </p>
 
-              <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white">Full-Stack Developer</h2>
-                <p className="text-gray-400">
-                  I&apos;m a full-stack developer specializing in React.js, Next.js, Material-UI, Python, and FastAPI. I
-                  build dynamic UIs and scalable backend services while efficiently managing databases with SQLAlchemy
-                  and SQLite.
-                </p>
-                <p className="text-gray-400">
-                  I&apos;m passionate about delivering intuitive user experiences and optimizing performance. My approach
-                  combines technical expertise with creative problem-solving to build applications that not only
-                  function flawlessly but also provide exceptional user experiences.
-                </p>
+      <div className="grid grid-cols-2 gap-6 text-muted-foreground">
+        <div>
+          <p className="font-medium mb-1">Name:</p>
+          <p>Ashfaque Alam</p>
+        </div>
+        <div>
+          <p className="font-medium mb-1">Email:</p>
+          <p>ashfaquealam154@gmail.com</p>
+        </div>
+        <div>
+          <p className="font-medium mb-1">Location:</p>
+          <p>Lucknow, India</p>
+        </div>
+        <div>
+          <p className="font-medium mb-1">Availability:</p>
+          <p>Available for work</p>
+        </div>
+      </div>
+    </div>
 
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-gray-300 font-medium mb-1">Name:</p>
-                    <p className="text-gray-400">Ashfaque Alam</p>
-                  </div>
-                  <div>
-                    <p className="text-gray-300 font-medium mb-1">Email:</p>
-                    <p className="text-gray-400">ashfaquealam154@gmail.com</p>
-                  </div>
-                  <div>
-                    <p className="text-gray-300 font-medium mb-1">Location:</p>
-                    <p className="text-gray-400">Lucknow, India</p>
-                  </div>
-                  <div>
-                    <p className="text-gray-300 font-medium mb-1">Availability:</p>
-                    <p className="text-gray-400">Available for work</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </TabsContent>
+    
+
+    {/* Right side: About Text */}
+    <div className="space-y-8">
+      <div className="flex justify-center md:justify-start gap-8">
+        <div className="bg-card border border-border rounded-lg p-6 flex flex-col items-center text-center w-36">
+          <h3 className="text-5xl font-bold text-[#0a45a3] mb-1">+</h3>
+          <p className="text-muted-foreground text-sm font-semibold">Years Experience</p>
+        </div>
+        <div className="bg-card border border-border rounded-lg p-6 flex flex-col items-center text-center w-36">
+          <h3 className="text-5xl font-bold text-[#0a45a3] mb-1">10+</h3>
+          <p className="text-muted-foreground text-sm font-semibold">Projects Completed</p>
+        </div>
+      </div>
+    </div>
+  </motion.div>
+</TabsContent>
+
 
           <TabsContent value="skills" className="mt-6">
             <motion.div initial="hidden" animate="visible" variants={fadeIn} className="grid md:grid-cols-2 gap-12">
               <div className="space-y-8">
-                <h2 className="text-2xl font-bold text-white">Technical Skills</h2>
+                <h2 className="text-2xl font-bold text-foreground">Technical Skills</h2>
 
                 <div className="space-y-6">
                   {technicalSkills.map((skill, index) => (
                     <div key={index} className="space-y-2">
                       <div className="flex justify-between">
-                        <span className="text-white">{skill.name}</span>
-                        <span className="text-gray-400">{skill.level}%</span>
+                        <span className="text-foreground">{skill.name}</span>
+                        <span className="text-muted-foreground">{skill.level}%</span>
                       </div>
-                      <Progress value={skill.level} className="h-2 bg-gray-800" indicatorClassName="bg-[#0a45a3]" />
+                      <Progress value={skill.level} className="h-2 bg-card/80" indicatorClassName="bg-[#0a45a3]" />
                     </div>
                   ))}
                 </div>
               </div>
 
               <div className="space-y-8">
-                <h2 className="text-2xl font-bold text-white">Professional Skills</h2>
+                <h2 className="text-2xl font-bold text-foreground">Professional Skills</h2>
 
                 <div className="grid grid-cols-2 gap-6">
                   {professionalSkills.map((skill, index) => (
                     <div
                       key={index}
-                      className="bg-gray-900 border border-gray-800 rounded-lg p-6 hover:border-[#0a45a3]/30 transition-colors"
+                      className="bg-card border border-gray-800 rounded-lg p-6 hover:border-[#0a45a3]/30 transition-colors"
                     >
                       <div className="flex items-center space-x-3 mb-3">
                         <div className="text-[#0a45a3]">{skill.icon}</div>
-                        <h3 className="text-white font-medium">{skill.name}</h3>
+                        <h3 className="text-foreground font-medium">{skill.name}</h3>
                       </div>
-                      <p className="text-gray-400 text-sm">{skill.description}</p>
+                      <p className="text-muted-foreground text-sm">{skill.description}</p>
                     </div>
                   ))}
                 </div>
@@ -149,14 +147,14 @@ export default function About() {
             <motion.div initial="hidden" animate="visible" variants={fadeIn} className="max-w-3xl mx-auto">
               <div className="relative border-l-2 border-[#0a45a3]/30 pl-8 pb-8 ml-4">
                 <div className="absolute w-4 h-4 bg-[#0a45a3] rounded-full -left-[9px] top-0"></div>
-                <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                <div className="bg-card border border-gray-800 rounded-lg p-6">
                   <span className="inline-block px-3 py-1 bg-[#0a45a3]/10 text-[#0a45a3] rounded-full text-sm font-medium mb-3">
-                    2018 - 2022
+                    2019 - 2023
                   </span>
-                  <h3 className="text-xl text-white font-semibold mb-2">
+                  <h3 className="text-xl text-foreground font-semibold mb-2">
                     Bachelor of Engineering - Electronics and Communication Engineering
                   </h3>
-                  <p className="text-gray-400 mb-3">SDM College of Engineering and Technology, Dharwad, Karnataka</p>
+                  <p className="text-muted-foreground mb-3">SDM College of Engineering and Technology, Dharwad, Karnataka</p>
                   <p className="text-gray-500">
                     Completed a comprehensive engineering program with a focus on electronics and communication systems.
                     Developed strong analytical and problem-solving skills through rigorous coursework and practical
@@ -167,14 +165,14 @@ export default function About() {
 
               <div className="relative border-l-2 border-[#0a45a3]/30 pl-8 ml-4">
                 <div className="absolute w-4 h-4 bg-[#0a45a3] rounded-full -left-[9px] top-0"></div>
-                <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                <div className="bg-card border border-gray-800 rounded-lg p-6">
                   <span className="inline-block px-3 py-1 bg-[#0a45a3]/10 text-[#0a45a3] rounded-full text-sm font-medium mb-3">
-                    2022 - Present
+                    2023 - Present
                   </span>
-                  <h3 className="text-xl text-white font-semibold mb-2">
+                  <h3 className="text-xl text-foreground font-semibold mb-2">
                     Self-Directed Learning & Professional Development
                   </h3>
-                  <p className="text-gray-400 mb-3">Online Platforms & Personal Projects</p>
+                  <p className="text-muted-foreground mb-3">Online Platforms & Personal Projects</p>
                   <p className="text-gray-500">
                     Continuously expanding my knowledge and skills through online courses, tutorials, and hands-on
                     projects. Focused on modern web development technologies and best practices to stay current with

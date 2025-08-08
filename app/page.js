@@ -8,23 +8,22 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col md:flex-row items-center justify-center px-4 md:px-10 py-20 overflow-hidden">
+      <section className="relative min-h-screen flex flex-col md:flex-row items-center justify-center px-4 md:px-10 py-20 overflow-hidden bg-background text-foreground">
         {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-900 to-gray-950 z-0"></div>
+        <div className="absolute inset-0 z-0 hidden dark:block bg-gradient-to-br from-gray-900 via-gray-900 to-gray-950"></div>
         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#0a45a3_1px,transparent_1px)] [background-size:20px_20px] z-0"></div>
-
         {/* Content */}
         <div className="container mx-auto z-10 flex flex-col md:flex-row items-center justify-between gap-10">
           {/* Text Content */}
           <div className="w-full md:w-1/2 space-y-6 text-center md:text-left">
             <Badge
               variant="outline"
-              className="px-4 py-1 text-sm font-medium bg-blue-950/50 text-blue-400 border-blue-800 mb-4"
+              className="px-4 py-1 text-sm font-medium bg-blue-100 text-blue-800 border-blue-200 mb-4 dark:bg-blue-950/50 dark:text-blue-400 dark:border-blue-800"
             >
-              Full-Stack Developer @ CareerSuite
+              Software Engineer @ Buzzworks
             </Badge>
 
-            <h1 className="text-5xl md:text-7xl font-bold text-white">
+            <h1 className="text-5xl md:text-7xl font-bold text-foreground">
               Hey there! I&apos;m{" "}
               <span className="text-[#0a45a3] inline-block relative">
                 Ashfaque
@@ -32,34 +31,18 @@ export default function Home() {
               </span>
             </h1>
 
-            <p className="text-xl text-gray-300 max-w-xl">
+            <p className="text-xl text-muted-foreground max-w-xl">
               I build exceptional digital experiences with modern web
               technologies, focusing on responsive design and seamless
               functionality.
             </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center md:justify-start">
-              <Button
-                size="lg"
-                className="bg-[#0a45a3] hover:bg-[#0a45a3]/80 text-white"
-              >
-                <Download className="mr-2 h-4 w-4" /> Download CV
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-[#0a45a3] text-[#0a45a3] hover:bg-[#0a45a3]/10"
-              >
-                View Projects
-              </Button>
-            </div>
 
             <div className="flex items-center gap-6 pt-6 justify-center md:justify-start">
               <a
                 href="https://github.com/ashalam1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#0a45a3] transition-colors"
+                className="text-muted-foreground hover:text-[#0a45a3] transition-colors"
               >
                 <Github className="h-6 w-6" />
               </a>
@@ -67,7 +50,7 @@ export default function Home() {
                 href="https://linkedin.com/in/ashfaquealam154"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#0a45a3] transition-colors"
+                className="text-muted-foreground hover:text-[#0a45a3] transition-colors"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +71,7 @@ export default function Home() {
                 href="https://twitter.com/yourprofile"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#0a45a3] transition-colors"
+                className="text-muted-foreground hover:text-[#0a45a3] transition-colors"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +90,7 @@ export default function Home() {
                 href="https://instagram.com/ashfu_003"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#0a45a3] transition-colors"
+                className="text-muted-foreground hover:text-[#0a45a3] transition-colors"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -141,12 +124,12 @@ export default function Home() {
             </div>
             <div
               className="absolute -bottom-4 right-1/2 md:right-20 transform translate-x-1/2 md:translate-x-0 
-  bg-gray-900 border border-gray-800 rounded-lg p-3 shadow-lg"
+  bg-card border border-border rounded-lg p-3 shadow-lg"
             >
               <div className="flex items-center gap-2">
                 <div className="h-3 w-3 bg-blue-500 rounded-full animate-pulse"></div>
-                <span className="text-white font-medium">
-                  Working @ CareerSuite
+                <span className="text-foreground font-medium">
+                  Working @ Buzzworks
                 </span>
               </div>
             </div>
@@ -155,25 +138,33 @@ export default function Home() {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
-          <span className="text-gray-400 text-sm mb-2">Scroll Down</span>
-          <ChevronDown className="h-6 w-6 text-gray-400" />
+          <span className="text-muted-foreground text-sm mb-2">
+            Scroll Down
+          </span>
+          <ChevronDown className="h-6 w-6 text-muted-foreground" />
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-20 px-4 bg-gray-950">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
+      <section className="py-20 px-4 relative overflow-hidden bg-background text-foreground">
+        {/* Dark mode gradient background overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-900 to-gray-950 -z-10 hidden dark:block"></div>
+        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#0a45a3_1px,transparent_1px)] [background-size:20px_20px] z-0"></div>
+
+
+        <div className="container mx-auto z-10">
+          <div className="text-center mb-16 z-10">
             <Badge
               variant="outline"
-              className="px-4 py-1 text-sm font-medium bg-blue-950/50 text-blue-400 border-blue-800 mb-4"
+              className="px-4 py-1 text-sm font-medium bg-blue-100 text-blue-800 border-blue-200 mb-4 dark:bg-blue-950/50 dark:text-blue-400 dark:border-blue-800"
             >
               Services
             </Badge>
-            <h2 className="text-4xl font-bold text-white mb-4">
+
+            <h2 className="text-4xl font-bold text-foreground mb-4">
               What I Bring to the Table
             </h2>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Empowering your projects with expertise and innovation, delivering
               solutions that exceed expectations.
             </p>
@@ -183,19 +174,18 @@ export default function Home() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-gray-900 border border-gray-800 rounded-xl p-6 transition-all duration-300
-                  hover:border-[#0a45a3]/50 hover:shadow-[0_0_15px_rgba(10,69,163,0.15)] group"
+                className="bg-card border border-border rounded-xl p-6 transition-all duration-300 hover:border-[#0a45a3]/50 hover:shadow-[0_0_15px_rgba(10,69,163,0.15)] group"
               >
                 <div
                   className="w-14 h-14 bg-[#0a45a3]/10 rounded-lg flex items-center justify-center mb-6
-                  group-hover:bg-[#0a45a3]/20 transition-colors duration-300"
+            group-hover:bg-[#0a45a3]/20 transition-colors duration-300"
                 >
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">
+                <h3 className="text-xl font-semibold text-foreground mb-3">
                   {service.title}
                 </h3>
-                <p className="text-gray-400">{service.description}</p>
+                <p className="text-muted-foreground">{service.description}</p>
               </div>
             ))}
           </div>
@@ -203,79 +193,137 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-      <section className="py-20 px-4 bg-gray-900">
+      <section className="py-20 px-4 relative overflow-hidden bg-background text-foreground">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-900 to-gray-950 -z-10 hidden dark:block"></div>
+        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#0a45a3_1px,transparent_1px)] [background-size:20px_20px] z-0"></div>
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <Badge
               variant="outline"
-              className="px-4 py-1 text-sm font-medium bg-blue-950/50 text-blue-400 border-blue-800 mb-4"
+              className="px-4 py-1 text-sm font-medium bg-blue-100 text-blue-800 border-blue-200 mb-4 dark:bg-blue-950/50 dark:text-blue-400 dark:border-blue-800"
             >
               Experience
             </Badge>
-            <h2 className="text-4xl font-bold text-white mb-4">
+            <h2 className="text-4xl font-bold text-foreground mb-4">
               Where I&apos;ve Made an Impact
             </h2>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Professional experiences that have shaped my skills and expertise
               in software development.
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            {/* Current Role */}
-            <div className="bg-gray-900 border border-gray-800 rounded-xl p-8 mb-8 hover:border-[#0a45a3]/50 transition-all duration-300">
+          <div className="max-w-4xl mx-auto space-y-8">
+            {/* Current Role - Buzzworks Business Services Pvt. Ltd */}
+            <div className="bg-background border border-border rounded-xl p-8 hover:border-[#0a45a3]/50 transition-all duration-300">
               <div className="flex flex-col md:flex-row justify-between mb-4">
                 <div>
-                  <h3 className="text-2xl font-semibold text-white">
+                  <h3 className="text-2xl font-semibold text-foreground">
+                    Software Engineer
+                  </h3>
+                  <p className="text-[#0a45a3] font-medium">
+                    Buzzworks Business Services Pvt. Ltd.
+                  </p>
+                </div>
+                <div className="mt-2 md:mt-0">
+                  <Badge className="bg-[#0a45a3]/80 text-foreground">
+                    Current
+                  </Badge>
+                  <p className="text-muted-foreground mt-1">
+                    August 2025 - Present
+                  </p>
+                </div>
+              </div>
+              <p className="text-muted-foreground mb-6">
+                Working on innovative software solutions including development,
+                deployment, and maintenance of business-critical applications
+                with a focus on scalability and performance.
+              </p>
+              {/* <div className="flex flex-wrap gap-2">
+                {[
+                  "Next.js",
+                  "React",
+                  "Node.js",
+                  "Express",
+                  "MongoDB",
+                  "AWS",
+                  "Docker",
+                ].map((tech) => (
+                  <Badge
+                    key={tech}
+                    variant="outline"
+                    className="bg-card text-muted-foreground border-gray-700"
+                  >
+                    {tech}
+                  </Badge>
+                ))}
+              </div> */}
+            </div>
+
+            {/* Previous Role - CareerSuite */}
+            <div className="bg-background border border-border rounded-xl p-8 hover:border-[#0a45a3]/50 transition-all duration-300">
+              <div className="flex flex-col md:flex-row justify-between mb-4">
+                <div>
+                  <h3 className="text-2xl font-semibold text-foreground">
                     Software Engineer
                   </h3>
                   <p className="text-[#0a45a3] font-medium">CareerSuite</p>
                 </div>
                 <div className="mt-2 md:mt-0">
-                  <Badge className="bg-[#0a45a3]/80 text-white">Current</Badge>
-                  <p className="text-gray-400 mt-1">April 2023 - Present</p>
+                  <p className="text-muted-foreground mt-1">
+                    August 2023 - July 2025
+                  </p>
                 </div>
               </div>
-              <p className="text-gray-300 mb-6">
+              <p className="text-muted-foreground mb-6">
                 Developed a feature-rich upskilling platform with
                 functionalities like calendar integration, user authentication,
                 profile management, email notifications, and mentor
                 recommendations.
               </p>
               <div className="flex flex-wrap gap-2">
-                {["Python", "FastAPI", "SQLAlchemy", "React", "Next.js", "Shadcn", "Tailwindcss", "PostgreSQL",  "AWS"].map(
-                  (tech) => (
-                    <Badge
-                      key={tech}
-                      variant="outline"
-                      className="bg-gray-800 text-gray-300 border-gray-700"
-                    >
-                      {tech}
-                    </Badge>
-                  )
-                )}
+                {[
+                  "Python",
+                  "FastAPI",
+                  "SQLAlchemy",
+                  "React",
+                  "Next.js",
+                  "Shadcn",
+                  "Tailwindcss",
+                  "PostgreSQL",
+                  "AWS",
+                ].map((tech) => (
+                  <Badge
+                    key={tech}
+                    variant="outline"
+                    className="bg-card text-muted-foreground border-gray-700"
+                  >
+                    {tech}
+                  </Badge>
+                ))}
               </div>
             </div>
-
-            {/* You can add previous roles here following the same pattern */}
           </div>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section className="py-20 px-4 bg-gray-900">
+      <section className="py-20 px-4 relative overflow-hidden bg-background text-foreground">
+
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-900 to-gray-950 -z-10 hidden dark:block"></div>
+        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#0a45a3_1px,transparent_1px)] [background-size:20px_20px] z-0"></div>
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <Badge
               variant="outline"
-              className="px-4 py-1 text-sm font-medium bg-blue-950/50 text-blue-400 border-blue-800 mb-4"
+              className="px-4 py-1 text-sm font-medium bg-blue-100 text-blue-800 border-blue-200 mb-4 dark:bg-blue-950/50 dark:text-blue-400 dark:border-blue-800"
             >
               Portfolio
             </Badge>
-            <h2 className="text-4xl font-bold text-white mb-4">
+            <h2 className="text-4xl font-bold text-foreground mb-4">
               Projects that Made an Impact
             </h2>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Real-world solutions tailored to client needs, showcasing my
               expertise and problem-solving abilities.
             </p>
@@ -298,10 +346,10 @@ export default function Home() {
                 </div>
 
                 <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-xl font-semibold text-white mb-2">
+                  <h3 className="text-xl font-semibold text-foreground mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-gray-300 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-muted-foreground mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {project.description}
                   </p>
 
@@ -321,7 +369,7 @@ export default function Home() {
 
           <div className="flex justify-center mt-12">
             <Link href="/component/portfolio">
-              <Button className="bg-[#0a45a3] hover:bg-[#0a45a3]/80 text-white">
+              <Button className="bg-[#0a45a3] hover:bg-[#0a45a3]/80 text-foreground">
                 View All Projects
               </Button>
             </Link>

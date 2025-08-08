@@ -1,8 +1,8 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./component/Navbar/page";
-import Footer from "./component/footer/page"
-
+import Footer from "./component/footer/page";
+import { ThemeProvider } from "./context/ThemeProvider";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -16,7 +16,8 @@ const geistMono = localFont({
 
 export const metadata = {
   title: "Ashfaque Alam | Full-Stack Developer  ",
-  description: "Ashfaque Alam's portfolio showcasing expertise in React.js, Nextjs, Python, FastAPI, and delivering intuitive user experiences across web applications",
+  description:
+    "Ashfaque Alam's portfolio showcasing expertise in React.js, Nextjs, Python, FastAPI, and delivering intuitive user experiences across web applications",
 };
 
 export default function RootLayout({ children }) {
@@ -28,14 +29,16 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         />
-         <link rel="icon" href="/image/favicon.png" type="image/png" />
+        <link rel="icon" href="/image/favicon.png" type="image/png" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-900 text-white`}
+ 
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <ThemeProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
